@@ -1,18 +1,16 @@
 import { ArrayElement, SortingStep } from '@/types/algorithm';
 
-export const generateRandomArray = (size: number): ArrayElement[] => {
+export const generateRandomArray = (
+  size: number, 
+  min: number = 10, 
+  max: number = 300
+): ArrayElement[] => {
   const array: ArrayElement[] = [];
-  const values = new Set<number>();
   
-  while (values.size < size) {
-    values.add(Math.floor(Math.random() * 300) + 10);
-  }
-  
-  const uniqueValues = Array.from(values);
   for (let i = 0; i < size; i++) {
     array.push({
-      value: uniqueValues[i],
-      id: `element-${i}`,
+      value: Math.floor(Math.random() * (max - min + 1)) + min,
+      id: `element-${i}-${Date.now()}`,
       state: 'default'
     });
   }

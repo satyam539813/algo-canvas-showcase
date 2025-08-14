@@ -4,6 +4,7 @@ import { generateRandomArray, bubbleSort, mergeSort } from '@/utils/sortingAlgor
 import { ArrayVisualization } from './ArrayVisualization';
 import { AlgorithmControls } from './AlgorithmControls';
 import { AlgorithmInfo } from './AlgorithmInfo';
+import { ArrayInputControls } from './ArrayInputControls';
 import { ThemeToggle } from './ThemeToggle';
 
 export const AlgorithmVisualizer = () => {
@@ -13,6 +14,11 @@ export const AlgorithmVisualizer = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(300);
+  
+  // Array configuration state
+  const [arraySize, setArraySize] = useState(15);
+  const [minValue, setMinValue] = useState(5);
+  const [maxValue, setMaxValue] = useState(100);
 
   // Initialize with random array
   useEffect(() => {
@@ -20,12 +26,59 @@ export const AlgorithmVisualizer = () => {
   }, []);
 
   const generateNewArray = useCallback(() => {
-    const newArray = generateRandomArray(15);
+    const newArray = generateRandomArray(arraySize, minValue, maxValue);
     setArray(newArray);
     setSteps([]);
     setCurrentStep(0);
     setIsPlaying(false);
+  }, [arraySize, minValue, maxValue]);
+
+  const handleCustomArray = useCallback((customNumbers: number[]) => {
+    const newArray: ArrayElement[] = customNumbers.map((value, index) => ({
+      value,
+      id: `custom-${index}-${Date.now()}`,
+      state: 'default'
+    }));
+    setArray(newArray);
+    setSteps([]);
+    setCurrentStep(0);
+    setIsPlaying(false);
+    setArraySize(customNumbers.length);
   }, []);
+
+  const handleArraySizeChange = useCallback((size: number) => {
+    setArraySize(size);
+    if (!isPlaying) {
+      const newArray = generateRandomArray(size, minValue, maxValue);
+      setArray(newArray);
+      setSteps([]);
+      setCurrentStep(0);
+    }
+  }, [minValue, maxValue, isPlaying]);
+
+  const handleMinValueChange = useCallback((min: number) => {
+    if (min < maxValue) {
+      setMinValue(min);
+      if (!isPlaying) {
+        const newArray = generateRandomArray(arraySize, min, maxValue);
+        setArray(newArray);
+        setSteps([]);
+        setCurrentStep(0);
+      }
+    }
+  }, [maxValue, arraySize, isPlaying]);
+
+  const handleMaxValueChange = useCallback((max: number) => {
+    if (max > minValue) {
+      setMaxValue(max);
+      if (!isPlaying) {
+        const newArray = generateRandomArray(arraySize, minValue, max);
+        setArray(newArray);
+        setSteps([]);
+        setCurrentStep(0);
+      }
+    }
+  }, [minValue, arraySize, isPlaying]);
 
   const runAlgorithm = useCallback(() => {
     const sortingSteps = algorithm === 'bubble' 
@@ -130,7 +183,20 @@ export const AlgorithmVisualizer = () => {
             </div>
           </div>
 
-        {/* Algorithm Info */}
+          {/* Array Input Controls */}
+          <ArrayInputControls
+            arraySize={arraySize}
+            minValue={minValue}
+            maxValue={maxValue}
+            onArraySizeChange={handleArraySizeChange}
+            onMinValueChange={handleMinValueChange}
+            onMaxValueChange={handleMaxValueChange}
+            onCustomArraySubmit={handleCustomArray}
+            onGenerateArray={generateNewArray}
+            isPlaying={isPlaying}
+          />
+
+          {/* Algorithm Info */}
         <AlgorithmInfo 
           algorithm={algorithm} 
           description={currentDescription}
