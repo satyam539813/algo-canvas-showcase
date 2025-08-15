@@ -6,9 +6,10 @@ import { Slider } from '@/components/ui/slider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Settings2, Upload, Download, RefreshCw } from 'lucide-react';
+import { Settings2, Upload, Download, RefreshCw, Zap, Target } from 'lucide-react';
 import { ArrayElement } from '@/types/algorithm';
 import { toast } from '@/hooks/use-toast';
+import { ArrayInputDialog } from './ArrayInputDialog';
 
 interface ArrayInputControlsProps {
   arraySize: number;
@@ -180,6 +181,27 @@ export const ArrayInputControls = ({
           </div>
         </div>
 
+        {/* Interactive Array Builder */}
+        <div className="space-y-3">
+          <Label className="text-sm font-medium">Interactive Input</Label>
+          <div className="flex gap-2">
+            <ArrayInputDialog 
+              onArraySubmit={onCustomArraySubmit}
+              isPlaying={isPlaying}
+            />
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={onGenerateArray}
+              disabled={isPlaying}
+              className="hover:shadow-glow transition-all duration-300"
+            >
+              <Zap className="h-4 w-4 mr-2" />
+              Generate Random
+            </Button>
+          </div>
+        </div>
+
         {/* Preset Arrays */}
         <div className="space-y-3">
           <Label className="text-sm font-medium">Quick Presets</Label>
@@ -189,7 +211,7 @@ export const ArrayInputControls = ({
               size="sm"
               onClick={() => generatePreset('random')}
               disabled={isPlaying}
-              className="text-xs"
+              className="text-xs hover:bg-primary/10 transition-colors"
             >
               <RefreshCw className="h-3 w-3 mr-1" />
               Random
@@ -199,8 +221,9 @@ export const ArrayInputControls = ({
               size="sm"
               onClick={() => generatePreset('ascending')}
               disabled={isPlaying}
-              className="text-xs"
+              className="text-xs hover:bg-green-500/10 transition-colors"
             >
+              <Target className="h-3 w-3 mr-1" />
               Ascending
             </Button>
             <Button
@@ -208,7 +231,7 @@ export const ArrayInputControls = ({
               size="sm"
               onClick={() => generatePreset('descending')}
               disabled={isPlaying}
-              className="text-xs"
+              className="text-xs hover:bg-red-500/10 transition-colors"
             >
               Descending
             </Button>
@@ -217,7 +240,7 @@ export const ArrayInputControls = ({
               size="sm"
               onClick={() => generatePreset('nearly-sorted')}
               disabled={isPlaying}
-              className="text-xs"
+              className="text-xs hover:bg-yellow-500/10 transition-colors"
             >
               Nearly Sorted
             </Button>
