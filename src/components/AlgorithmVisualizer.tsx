@@ -5,6 +5,7 @@ import { ArrayVisualization } from './ArrayVisualization';
 import { AlgorithmControls } from './AlgorithmControls';
 import { AlgorithmInfo } from './AlgorithmInfo';
 import { ArrayInputControls } from './ArrayInputControls';
+import { ProgressBar } from './ProgressBar';
 import { ThemeToggle } from './ThemeToggle';
 
 export const AlgorithmVisualizer = () => {
@@ -196,33 +197,42 @@ export const AlgorithmVisualizer = () => {
             isPlaying={isPlaying}
           />
 
-          {/* Algorithm Info */}
-        <AlgorithmInfo 
-          algorithm={algorithm} 
-          description={currentDescription}
-        />
+          {/* Algorithm Info & Progress */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <AlgorithmInfo 
+              algorithm={algorithm} 
+              description={currentDescription}
+            />
+            <ProgressBar
+              currentStep={currentStep}
+              totalSteps={steps.length}
+              algorithm={algorithm}
+              isPlaying={isPlaying}
+              speed={speed}
+            />
+          </div>
 
-        {/* Visualization */}
-        <ArrayVisualization 
-          array={array} 
-          className="animate-fade-in shadow-elegant"
-        />
+          {/* Visualization */}
+          <ArrayVisualization 
+            array={array} 
+            className="animate-fade-in shadow-elegant"
+          />
 
-        {/* Controls */}
-        <AlgorithmControls
-          algorithm={algorithm}
-          isPlaying={isPlaying}
-          speed={speed}
-          currentStep={currentStep}
-          totalSteps={steps.length}
-          onAlgorithmChange={handleAlgorithmChange}
-          onPlay={handlePlay}
-          onPause={handlePause}
-          onReset={handleReset}
-          onStep={handleStep}
-          onSpeedChange={setSpeed}
-          onGenerateArray={generateNewArray}
-        />
+          {/* Controls */}
+          <AlgorithmControls
+            algorithm={algorithm}
+            isPlaying={isPlaying}
+            speed={speed}
+            currentStep={currentStep}
+            totalSteps={steps.length}
+            onAlgorithmChange={handleAlgorithmChange}
+            onPlay={handlePlay}
+            onPause={handlePause}
+            onReset={handleReset}
+            onStep={handleStep}
+            onSpeedChange={setSpeed}
+            onGenerateArray={generateNewArray}
+          />
 
           {/* Legend */}
           <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl border border-border/50 shadow-elegant">

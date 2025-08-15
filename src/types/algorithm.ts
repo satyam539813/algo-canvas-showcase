@@ -1,7 +1,7 @@
 export interface ArrayElement {
   value: number;
   id: string;
-  state: 'default' | 'comparing' | 'swapping' | 'sorted' | 'pivot';
+  state: 'default' | 'comparing' | 'swapping' | 'sorted' | 'pivot' | 'merging' | 'active';
 }
 
 export interface SortingStep {

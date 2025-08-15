@@ -110,18 +110,18 @@ export const ArrayInputControls = ({
   };
 
   return (
-    <Card className="w-full bg-card/80 backdrop-blur-sm border-border/50">
+    <Card className="w-full bg-card/80 backdrop-blur-sm border-border/50 shadow-elegant hover:shadow-glow transition-all duration-300">
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-lg flex items-center gap-2">
-            <Settings2 className="h-5 w-5" />
+          <CardTitle className="text-lg flex items-center gap-2 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+            <Settings2 className="h-5 w-5 text-primary animate-pulse" />
             Array Configuration
           </CardTitle>
           <Button
             variant="ghost"
             size="sm"
             onClick={() => setShowAdvanced(!showAdvanced)}
-            className="text-xs"
+            className="text-xs hover:bg-primary/20 transition-colors"
           >
             {showAdvanced ? 'Basic' : 'Advanced'}
           </Button>
@@ -236,7 +236,12 @@ export const ArrayInputControls = ({
                   value={customInput}
                   onChange={(e) => setCustomInput(e.target.value)}
                   disabled={isPlaying}
-                  className="w-full"
+                  className="w-full input-glow transition-all duration-300"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && customInput.trim() && !isPlaying) {
+                      handleCustomArraySubmit();
+                    }
+                  }}
                 />
                 <div className="flex gap-2">
                   <Button
