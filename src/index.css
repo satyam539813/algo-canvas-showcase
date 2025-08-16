@@ -8,57 +8,61 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 30% 6%;
-    --foreground: 220 30% 95%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 30% 8%;
-    --card-foreground: 220 30% 95%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 30% 8%;
-    --popover-foreground: 220 30% 95%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 262 83% 70%;
+    --primary: 213 94% 68%;
+    --primary-foreground: 240 10% 3.9%;
+    --primary-glow: 213 100% 75%;
 
-    --secondary: 220 30% 12%;
-    --secondary-foreground: 220 30% 95%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 30% 12%;
-    --muted-foreground: 220 20% 65%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 220 30% 12%;
-    --accent-foreground: 262 83% 58%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 30% 18%;
-    --input: 220 30% 18%;
-    --ring: 262 83% 58%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 213 94% 68%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Algorithm Visualizer Colors */
-    --array-bar: 220 30% 25%;
-    --array-bar-comparing: 45 93% 58%;
-    --array-bar-swapping: 0 84% 60%;
-    --array-bar-sorted: 142 76% 36%;
-    --array-bar-pivot: 262 83% 58%;
-    --array-bar-merging: 280 100% 70%;
-    --array-bar-active: 200 100% 50%;
+    /* Modern Vibrant Algorithm Colors */
+    --array-bar: 240 5% 20%;
+    --array-bar-comparing: 45 100% 60%;
+    --array-bar-swapping: 0 100% 65%;
+    --array-bar-sorted: 120 100% 50%;
+    --array-bar-pivot: 280 100% 70%;
+    --array-bar-merging: 200 100% 60%;
+    --array-bar-active: 180 100% 60%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    /* Dynamic Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 100% 75%), hsl(280 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(240 3.7% 15.9%));
+    --gradient-cyber: linear-gradient(45deg, hsl(280 100% 70%), hsl(213 94% 68%), hsl(180 100% 60%));
+    --gradient-neon: linear-gradient(90deg, hsl(213 94% 68%), hsl(280 100% 70%), hsl(120 100% 50%), hsl(45 100% 60%));
     
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.4);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.5);
+    /* Enhanced Shadows */
+    --shadow-elegant: 0 20px 40px -10px hsl(213 94% 68% / 0.3);
+    --shadow-glow: 0 0 50px hsl(213 100% 75% / 0.4);
+    --shadow-neon: 0 0 30px hsl(280 100% 70% / 0.6);
     
-    /* Animations */
+    /* Smooth Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -71,51 +75,54 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 30% 6%;
-    --foreground: 220 30% 95%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 30% 8%;
-    --card-foreground: 220 30% 95%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 30% 8%;
-    --popover-foreground: 220 30% 95%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 262 83% 70%;
+    --primary: 213 94% 68%;
+    --primary-foreground: 240 10% 3.9%;
+    --primary-glow: 213 100% 75%;
 
-    --secondary: 220 30% 12%;
-    --secondary-foreground: 220 30% 95%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 30% 12%;
-    --muted-foreground: 220 20% 65%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 220 30% 12%;
-    --accent-foreground: 262 83% 58%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 30% 18%;
-    --input: 220 30% 18%;
-    --ring: 262 83% 58%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 213 94% 68%;
 
-    /* Algorithm Visualizer Colors - Dark */
-    --array-bar: 220 30% 25%;
-    --array-bar-comparing: 45 93% 58%;
-    --array-bar-swapping: 0 84% 60%;
-    --array-bar-sorted: 142 76% 36%;
-    --array-bar-pivot: 262 83% 58%;
-    --array-bar-merging: 280 100% 70%;
-    --array-bar-active: 200 100% 50%;
+    /* Enhanced Dark Algorithm Colors */
+    --array-bar: 240 5% 20%;
+    --array-bar-comparing: 45 100% 60%;
+    --array-bar-swapping: 0 100% 65%;
+    --array-bar-sorted: 120 100% 50%;
+    --array-bar-pivot: 280 100% 70%;
+    --array-bar-merging: 200 100% 60%;
+    --array-bar-active: 180 100% 60%;
 
-    /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    /* Enhanced Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 100% 75%), hsl(280 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(240 3.7% 15.9%));
+    --gradient-cyber: linear-gradient(45deg, hsl(280 100% 70%), hsl(213 94% 68%), hsl(180 100% 60%));
+    --gradient-neon: linear-gradient(90deg, hsl(213 94% 68%), hsl(280 100% 70%), hsl(120 100% 50%), hsl(45 100% 60%));
     
-    /* Dark mode shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.4);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.5);
+    /* Enhanced Dark Shadows */
+    --shadow-elegant: 0 20px 40px -10px hsl(213 94% 68% / 0.4);
+    --shadow-glow: 0 0 50px hsl(213 100% 75% / 0.5);
+    --shadow-neon: 0 0 30px hsl(280 100% 70% / 0.7);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -143,8 +150,16 @@ All colors MUST be HSL.
     background: var(--gradient-primary);
   }
   
-  .gradient-subtle {
-    background: var(--gradient-subtle);
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-cyber {
+    background: var(--gradient-cyber);
+  }
+  
+  .gradient-neon {
+    background: var(--gradient-neon);
   }
   
   .shadow-elegant {
@@ -155,6 +170,10 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-glow);
   }
   
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+  
   .transition-smooth {
     transition: var(--transition-smooth);
   }
@@ -162,12 +181,17 @@ All colors MUST be HSL.
   .transition-bounce {
     transition: var(--transition-bounce);
   }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
 
   .array-bar {
     background: linear-gradient(135deg, hsl(var(--array-bar)), hsl(var(--array-bar) / 0.8));
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-spring);
     position: relative;
     overflow: hidden;
+    border: 1px solid hsl(var(--border));
   }
 
   .array-bar::before {
@@ -177,85 +201,131 @@ All colors MUST be HSL.
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.8s;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .array-bar:hover::before {
     left: 100%;
   }
+
+  .array-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, hsl(var(--primary) / 0.1) 50%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .array-bar:hover::after {
+    opacity: 1;
+  }
   
   .array-bar-comparing {
-    background: linear-gradient(135deg, hsl(var(--array-bar-comparing)), hsl(var(--array-bar-comparing) / 0.7));
-    transform: translateY(-6px) scale(1.05);
-    box-shadow: 0 8px 25px hsl(var(--array-bar-comparing) / 0.4);
-    animation: pulse-comparing 1.5s infinite;
+    background: linear-gradient(135deg, hsl(var(--array-bar-comparing)), hsl(var(--array-bar-comparing) / 0.6));
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 15px 35px hsl(var(--array-bar-comparing) / 0.5), 0 0 20px hsl(var(--array-bar-comparing) / 0.3);
+    animation: pulse-comparing 1.2s infinite;
+    border: 2px solid hsl(var(--array-bar-comparing));
   }
   
   .array-bar-swapping {
-    background: linear-gradient(135deg, hsl(var(--array-bar-swapping)), hsl(var(--array-bar-swapping) / 0.7));
-    transform: translateY(-10px) scale(1.15) rotate(5deg);
-    box-shadow: 0 12px 30px hsl(var(--array-bar-swapping) / 0.5);
-    animation: shake 0.6s infinite;
+    background: linear-gradient(135deg, hsl(var(--array-bar-swapping)), hsl(var(--array-bar-swapping) / 0.6));
+    transform: translateY(-12px) scale(1.2) rotate(8deg);
+    box-shadow: 0 20px 40px hsl(var(--array-bar-swapping) / 0.6), 0 0 30px hsl(var(--array-bar-swapping) / 0.4);
+    animation: intense-shake 0.5s infinite;
+    border: 2px solid hsl(var(--array-bar-swapping));
   }
   
   .array-bar-sorted {
-    background: linear-gradient(135deg, hsl(var(--array-bar-sorted)), hsl(var(--array-bar-sorted) / 0.8));
-    box-shadow: 0 4px 15px hsl(var(--array-bar-sorted) / 0.3);
-    animation: wave-in 0.8s ease-out;
+    background: linear-gradient(135deg, hsl(var(--array-bar-sorted)), hsl(var(--array-bar-sorted) / 0.7));
+    box-shadow: 0 8px 25px hsl(var(--array-bar-sorted) / 0.4), 0 0 15px hsl(var(--array-bar-sorted) / 0.2);
+    animation: success-bounce 0.6s ease-out;
+    border: 2px solid hsl(var(--array-bar-sorted));
   }
   
   .array-bar-pivot {
-    background: linear-gradient(135deg, hsl(var(--array-bar-pivot)), hsl(var(--array-bar-pivot) / 0.7));
-    transform: translateY(-6px) scale(1.1);
-    box-shadow: 0 8px 25px hsl(var(--array-bar-pivot) / 0.4);
-    animation: glow-pulse 2s infinite;
+    background: linear-gradient(135deg, hsl(var(--array-bar-pivot)), hsl(var(--array-bar-pivot) / 0.6));
+    transform: translateY(-8px) scale(1.15);
+    box-shadow: 0 15px 35px hsl(var(--array-bar-pivot) / 0.6), 0 0 25px hsl(var(--array-bar-pivot) / 0.4);
+    animation: pivot-glow 1.5s infinite;
+    border: 2px solid hsl(var(--array-bar-pivot));
   }
 
   .array-bar-merging {
-    background: linear-gradient(135deg, hsl(var(--array-bar-merging)), hsl(var(--array-bar-merging) / 0.7));
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px hsl(var(--array-bar-merging) / 0.4);
-    animation: merge-flow 1.2s infinite alternate;
+    background: linear-gradient(135deg, hsl(var(--array-bar-merging)), hsl(var(--array-bar-merging) / 0.6));
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 12px 30px hsl(var(--array-bar-merging) / 0.5), 0 0 20px hsl(var(--array-bar-merging) / 0.3);
+    animation: merge-flow 1s infinite alternate;
+    border: 2px solid hsl(var(--array-bar-merging));
   }
 
   .array-bar-active {
-    background: linear-gradient(135deg, hsl(var(--array-bar-active)), hsl(var(--array-bar-active) / 0.7));
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px hsl(var(--array-bar-active) / 0.4);
+    background: linear-gradient(135deg, hsl(var(--array-bar-active)), hsl(var(--array-bar-active) / 0.6));
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 10px 25px hsl(var(--array-bar-active) / 0.5), 0 0 15px hsl(var(--array-bar-active) / 0.3);
+    border: 2px solid hsl(var(--array-bar-active));
+    animation: active-pulse 1s infinite;
   }
 
   @keyframes pulse-comparing {
-    0%, 100% { transform: translateY(-6px) scale(1.05); }
-    50% { transform: translateY(-8px) scale(1.08); }
+    0%, 100% { 
+      transform: translateY(-8px) scale(1.1);
+      box-shadow: 0 15px 35px hsl(var(--array-bar-comparing) / 0.5), 0 0 20px hsl(var(--array-bar-comparing) / 0.3);
+    }
+    50% { 
+      transform: translateY(-10px) scale(1.12);
+      box-shadow: 0 20px 40px hsl(var(--array-bar-comparing) / 0.7), 0 0 30px hsl(var(--array-bar-comparing) / 0.5);
+    }
   }
 
-  @keyframes shake {
-    0%, 100% { transform: translateY(-10px) scale(1.15) rotate(5deg); }
-    25% { transform: translateY(-12px) scale(1.18) rotate(-3deg); }
-    75% { transform: translateY(-8px) scale(1.12) rotate(8deg); }
+  @keyframes intense-shake {
+    0%, 100% { transform: translateY(-12px) scale(1.2) rotate(8deg); }
+    20% { transform: translateY(-14px) scale(1.25) rotate(-6deg); }
+    40% { transform: translateY(-10px) scale(1.18) rotate(10deg); }
+    60% { transform: translateY(-15px) scale(1.22) rotate(-4deg); }
+    80% { transform: translateY(-11px) scale(1.19) rotate(7deg); }
   }
 
-  @keyframes wave-in {
-    0% { transform: scale(0.8) translateY(10px); opacity: 0.5; }
-    50% { transform: scale(1.1) translateY(-2px); }
+  @keyframes success-bounce {
+    0% { transform: scale(0.7) translateY(15px); opacity: 0.6; }
+    30% { transform: scale(1.15) translateY(-5px); }
+    60% { transform: scale(0.95) translateY(2px); }
     100% { transform: scale(1) translateY(0); opacity: 1; }
   }
 
-  @keyframes glow-pulse {
+  @keyframes pivot-glow {
     0%, 100% { 
-      box-shadow: 0 8px 25px hsl(var(--array-bar-pivot) / 0.4);
-      transform: translateY(-6px) scale(1.1);
+      box-shadow: 0 15px 35px hsl(var(--array-bar-pivot) / 0.6), 0 0 25px hsl(var(--array-bar-pivot) / 0.4);
+      transform: translateY(-8px) scale(1.15);
     }
     50% { 
-      box-shadow: 0 12px 35px hsl(var(--array-bar-pivot) / 0.6);
-      transform: translateY(-8px) scale(1.12);
+      box-shadow: 0 20px 45px hsl(var(--array-bar-pivot) / 0.8), 0 0 35px hsl(var(--array-bar-pivot) / 0.6);
+      transform: translateY(-10px) scale(1.18);
     }
   }
 
   @keyframes merge-flow {
-    0% { transform: translateY(-4px) scaleX(1); }
-    100% { transform: translateY(-6px) scaleX(1.05); }
+    0% { 
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 12px 30px hsl(var(--array-bar-merging) / 0.5), 0 0 20px hsl(var(--array-bar-merging) / 0.3);
+    }
+    100% { 
+      transform: translateY(-8px) scale(1.08);
+      box-shadow: 0 15px 35px hsl(var(--array-bar-merging) / 0.6), 0 0 25px hsl(var(--array-bar-merging) / 0.4);
+    }
+  }
+
+  @keyframes active-pulse {
+    0%, 100% { 
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 10px 25px hsl(var(--array-bar-active) / 0.5), 0 0 15px hsl(var(--array-bar-active) / 0.3);
+    }
+    50% { 
+      transform: translateY(-6px) scale(1.1);
+      box-shadow: 0 12px 30px hsl(var(--array-bar-active) / 0.6), 0 0 20px hsl(var(--array-bar-active) / 0.4);
+    }
   }
 
   /* Enhanced input styling */
@@ -264,14 +334,53 @@ All colors MUST be HSL.
     border-color: hsl(var(--primary));
   }
 
-  /* Progress bar animation */
+  /* Enhanced progress bar */
   .progress-bar {
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    animation: progress-shine 2s infinite;
+    background: var(--gradient-primary);
+    animation: progress-shine 1.5s infinite;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary-glow) / 0.6), transparent);
+    animation: shimmer-progress 2s infinite;
   }
 
   @keyframes progress-shine {
-    0% { background-position: -100% 0; }
-    100% { background-position: 100% 0; }
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes shimmer-progress {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* Floating particles effect */
+  .particle-bg::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(var(--primary) / 0.3), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--array-bar-comparing) / 0.3), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--array-bar-sorted) / 0.3), transparent),
+      radial-gradient(1px 1px at 130px 80px, hsl(var(--array-bar-pivot) / 0.3), transparent);
+    background-repeat: repeat;
+    background-size: 150px 100px;
+    animation: float-particles 20s linear infinite;
+  }
+
+  @keyframes float-particles {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-100px); }
   }
 }

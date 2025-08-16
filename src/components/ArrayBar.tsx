@@ -28,32 +28,35 @@ export const ArrayBar = ({ element, maxValue, index }: ArrayBarProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-3 min-w-[35px] animate-fade-in">
+    <div className="flex flex-col items-center gap-4 min-w-[40px] animate-fade-in">
       <div
         className={getBarClasses()}
         style={{ 
           height: `${height}px`, 
           width: '100%',
-          minHeight: '30px'
+          minHeight: '35px'
         }}
         title={`Value: ${element.value}, Position: ${index}`}
       >
-        <span className="text-xs font-bold text-white mb-2 drop-shadow-lg select-none">
+        <span className="text-xs font-bold text-white mb-2 drop-shadow-lg select-none z-10 relative">
           {element.value}
         </span>
         
-        {/* Shimmer effect for active bars */}
+        {/* Enhanced shimmer effect */}
         {element.state !== 'default' && (
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shimmer" />
+          <>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 animate-shimmer" />
+            <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-transparent animate-pulse" />
+          </>
         )}
       </div>
       
-      <div className="flex flex-col items-center gap-1">
-        <span className="text-xs text-muted-foreground font-mono bg-muted/50 px-1.5 py-0.5 rounded">
+      <div className="flex flex-col items-center gap-2">
+        <span className="text-xs text-muted-foreground font-mono bg-muted/70 px-2 py-1 rounded-lg border border-border/30">
           {index}
         </span>
         {element.state !== 'default' && (
-          <div className="w-2 h-1 rounded-full bg-primary animate-pulse" />
+          <div className="w-3 h-1.5 rounded-full gradient-primary animate-pulse shadow-glow" />
         )}
       </div>
     </div>
