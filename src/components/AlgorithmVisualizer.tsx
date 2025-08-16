@@ -161,116 +161,114 @@ export const AlgorithmVisualizer = () => {
   const currentDescription = steps[currentStep]?.description || '';
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Enhanced Background Layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-muted/20" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 via-transparent to-primary/10" />
-      <div className="absolute inset-0 particle-bg opacity-30" />
+    <div className="min-h-screen bg-background relative">
+      {/* Premium Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-muted/10" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary))_0.1px,transparent_0.1px)] opacity-10" 
+           style={{ backgroundSize: '80px 80px' }} />
       
-      {/* Cyber Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)] opacity-20" 
-           style={{ backgroundSize: '60px 60px' }} />
-      
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-20 w-32 h-32 gradient-cyber rounded-full blur-3xl opacity-20 animate-float" />
-      <div className="absolute bottom-20 right-20 w-40 h-40 gradient-neon rounded-full blur-2xl opacity-15 animate-float" style={{ animationDelay: '1s' }} />
-      
-      <div className="relative z-10 p-6">
-        <div className="max-w-7xl mx-auto space-y-8">
-          {/* Enhanced Header */}
+      <div className="relative z-10 p-8">
+        <div className="max-w-7xl mx-auto space-y-10">
+          {/* Premium Header */}
           <div className="flex items-center justify-between">
-            <div className="text-center flex-1 space-y-4">
-              <h1 className="text-6xl font-bold gradient-neon bg-clip-text text-transparent animate-cyber-glow">
+            <div className="text-center flex-1 space-y-6">
+              <h1 className="text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                 Algorithm Visualizer
               </h1>
-              <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
-                Experience the beauty of sorting algorithms with stunning real-time visualization and modern UI
+              <p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed">
+                Experience the elegance of sorting algorithms with premium visualization and refined interactions
               </p>
             </div>
-            <div className="absolute top-6 right-6">
+            <div className="absolute top-8 right-8">
               <ThemeToggle />
             </div>
           </div>
 
-          {/* Array Input Controls */}
-          <ArrayInputControls
-            arraySize={arraySize}
-            minValue={minValue}
-            maxValue={maxValue}
-            onArraySizeChange={handleArraySizeChange}
-            onMinValueChange={handleMinValueChange}
-            onMaxValueChange={handleMaxValueChange}
-            onCustomArraySubmit={handleCustomArray}
-            onGenerateArray={generateNewArray}
-            isPlaying={isPlaying}
-          />
-
-          {/* Algorithm Info & Progress */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <AlgorithmInfo 
-              algorithm={algorithm} 
-              description={currentDescription}
+          {/* Premium Array Input Controls */}
+          <div className="glass-effect rounded-2xl p-8 shadow-premium border border-border/30">
+            <ArrayInputControls
+              arraySize={arraySize}
+              minValue={minValue}
+              maxValue={maxValue}
+              onArraySizeChange={handleArraySizeChange}
+              onMinValueChange={handleMinValueChange}
+              onMaxValueChange={handleMaxValueChange}
+              onCustomArraySubmit={handleCustomArray}
+              onGenerateArray={generateNewArray}
+              isPlaying={isPlaying}
             />
-            <ProgressBar
-              currentStep={currentStep}
-              totalSteps={steps.length}
+          </div>
+
+          {/* Premium Algorithm Info & Progress */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="glass-effect rounded-2xl p-8 shadow-premium border border-border/30">
+              <AlgorithmInfo 
+                algorithm={algorithm} 
+                description={currentDescription}
+              />
+            </div>
+            <div className="glass-effect rounded-2xl p-8 shadow-premium border border-border/30">
+              <ProgressBar
+                currentStep={currentStep}
+                totalSteps={steps.length}
+                algorithm={algorithm}
+                isPlaying={isPlaying}
+                speed={speed}
+              />
+            </div>
+          </div>
+
+          {/* Premium Visualization */}
+          <div className="glass-effect rounded-2xl p-8 shadow-premium border border-border/30">
+            <ArrayVisualization 
+              array={array} 
+              className="animate-fade-in"
+            />
+          </div>
+
+          {/* Premium Controls */}
+          <div className="glass-effect rounded-2xl p-8 shadow-premium border border-border/30">
+            <AlgorithmControls
               algorithm={algorithm}
               isPlaying={isPlaying}
               speed={speed}
+              currentStep={currentStep}
+              totalSteps={steps.length}
+              onAlgorithmChange={handleAlgorithmChange}
+              onPlay={handlePlay}
+              onPause={handlePause}
+              onReset={handleReset}
+              onStep={handleStep}
+              onSpeedChange={setSpeed}
+              onGenerateArray={generateNewArray}
             />
           </div>
 
-          {/* Enhanced Visualization */}
-          <div className="relative">
-            <div className="absolute inset-0 gradient-cyber rounded-2xl blur-xl opacity-20 animate-pulse-glow" />
-            <ArrayVisualization 
-              array={array} 
-              className="relative animate-fade-in shadow-neon bg-card/30 backdrop-blur-sm border border-primary/20"
-            />
-          </div>
-
-          {/* Controls */}
-          <AlgorithmControls
-            algorithm={algorithm}
-            isPlaying={isPlaying}
-            speed={speed}
-            currentStep={currentStep}
-            totalSteps={steps.length}
-            onAlgorithmChange={handleAlgorithmChange}
-            onPlay={handlePlay}
-            onPause={handlePause}
-            onReset={handleReset}
-            onStep={handleStep}
-            onSpeedChange={setSpeed}
-            onGenerateArray={generateNewArray}
-          />
-
-          {/* Enhanced Legend */}
-          <div className="relative">
-            <div className="absolute inset-0 gradient-secondary rounded-2xl blur-lg opacity-50" />
-            <div className="relative bg-card/40 backdrop-blur-md p-8 rounded-2xl border border-primary/30 shadow-neon">
-              <h3 className="font-bold mb-6 text-xl gradient-primary bg-clip-text text-transparent">Color Legend</h3>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-sm">
-                <div className="flex items-center gap-4 p-3 rounded-lg bg-muted/20 transition-all hover:bg-muted/40">
-                  <div className="w-6 h-6 array-bar rounded-lg shadow-lg"></div>
-                  <span className="font-semibold">Default</span>
-                </div>
-                <div className="flex items-center gap-4 p-3 rounded-lg bg-muted/20 transition-all hover:bg-muted/40">
-                  <div className="w-6 h-6 array-bar-comparing rounded-lg"></div>
-                  <span className="font-semibold">Comparing</span>
-                </div>
-                <div className="flex items-center gap-4 p-3 rounded-lg bg-muted/20 transition-all hover:bg-muted/40">
-                  <div className="w-6 h-6 array-bar-swapping rounded-lg"></div>
-                  <span className="font-semibold">Swapping</span>
-                </div>
-                <div className="flex items-center gap-4 p-3 rounded-lg bg-muted/20 transition-all hover:bg-muted/40">
-                  <div className="w-6 h-6 array-bar-sorted rounded-lg"></div>
-                  <span className="font-semibold">Sorted</span>
-                </div>
-                <div className="flex items-center gap-4 p-3 rounded-lg bg-muted/20 transition-all hover:bg-muted/40">
-                  <div className="w-6 h-6 array-bar-pivot rounded-lg"></div>
-                  <span className="font-semibold">Pivot/Merge</span>
-                </div>
+          {/* Premium Legend */}
+          <div className="glass-effect rounded-2xl p-8 shadow-premium border border-border/30">
+            <h3 className="font-bold mb-8 text-2xl bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+              Color Legend
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/10 transition-premium hover:bg-muted/20 hover:scale-105">
+                <div className="w-8 h-8 array-bar rounded-lg shadow-lg"></div>
+                <span className="font-semibold text-lg">Default</span>
+              </div>
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/10 transition-premium hover:bg-muted/20 hover:scale-105">
+                <div className="w-8 h-8 array-bar-comparing rounded-lg"></div>
+                <span className="font-semibold text-lg">Comparing</span>
+              </div>
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/10 transition-premium hover:bg-muted/20 hover:scale-105">
+                <div className="w-8 h-8 array-bar-swapping rounded-lg"></div>
+                <span className="font-semibold text-lg">Swapping</span>
+              </div>
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/10 transition-premium hover:bg-muted/20 hover:scale-105">
+                <div className="w-8 h-8 array-bar-sorted rounded-lg"></div>
+                <span className="font-semibold text-lg">Sorted</span>
+              </div>
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/10 transition-premium hover:bg-muted/20 hover:scale-105">
+                <div className="w-8 h-8 array-bar-pivot rounded-lg"></div>
+                <span className="font-semibold text-lg">Pivot/Merge</span>
               </div>
             </div>
           </div>
